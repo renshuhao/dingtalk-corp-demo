@@ -13,7 +13,11 @@
       </configuration>
     </facet>
     <facet type="Spring" name="Spring">
-      <configuration />
+      <configuration>
+        <fileset id="fileset" name="Spring" removed="false">
+          <file>file://$MODULE_DIR$/src/main/resource/spring.xml</file>
+        </fileset>
+      </configuration>
     </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_7">
@@ -21,6 +25,7 @@
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resource" type="java-resource" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />
@@ -73,7 +78,7 @@
     <orderEntry type="module-library">
       <library name="Maven: com.dingtalk.open:taobao-sdk-java:1.0.0-SNAPSHOT">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/lib/taobao-sdk-java-auto_1479188381469-20170724.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/taobao-sdk-java-auto_1479188381469-20180119.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

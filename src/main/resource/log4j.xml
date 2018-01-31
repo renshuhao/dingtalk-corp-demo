@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<appender name="PROJECT" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="file" value="main.log" />
+		<param name="append" value="true" />
+		<param name="encoding" value="UTF-8" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss,SSS} %-5p %c:%L - %m%n" />
+		</layout>
+	</appender>
+
+	<!-- http invoke log -->
+	<appender name="HTTP_INVOKE_LOGGER_APPENDER" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="file" value="http_invoke.log" />
+		<param name="append" value="true" />
+		<param name="encoding" value="UTF-8" />
+		<param name="threshold" value="INFO" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss,SSS} %p %m%n" />
+		</layout>
+	</appender>
+
+	<!-- ding open sdk log -->
+	<appender name="DING_OPEN_CLIENT_SDK_LOGGER_APPENDER" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="file" value="ding_open_client_sdk.log" />
+		<param name="append" value="true" />
+		<param name="encoding" value="UTF-8" />
+		<param name="threshold" value="INFO" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss,SSS} %p %m%n" />
+		</layout>
+	</appender>
+
+	<logger name="HTTP_INVOKE_LOGGER" additivity="false">
+		<level value="INFO" />
+		<appender-ref ref="HTTP_INVOKE_LOGGER_APPENDER" />
+	</logger>
+	<logger name="DING_OPEN_CLIENT_SDK_LOGGER" additivity="false">
+		<level value="INFO" />
+		<appender-ref ref="DING_OPEN_CLIENT_SDK_LOGGER_APPENDER" />
+	</logger>
+
+	<root>
+		<!--主日志,只记录所有异常 -->
+		<level value="WARN" />
+		<appender-ref ref="PROJECT" />
+	</root>
+</log4j:configuration>
